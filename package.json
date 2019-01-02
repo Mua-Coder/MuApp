@@ -1,0 +1,17 @@
+{
+  "name": "mean-stack-template",
+  "version": "1.0.0",
+  "description": "Mean Stack Template",
+  "main": "index.js",
+  "scripts": {
+    "start": "node index.js"
+  },
+  "author": "Hwanmoo Yong",
+  "license": "ISC",
+  "dependencies": {
+    "body-parser": "^1.18.2",
+    "express": "^4.16.2",
+    "jsonwebtoken": "^8.4.0",
+    "mongoose": "^4.13.11"
+  }
+}

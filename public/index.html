@@ -1,0 +1,45 @@
+<html ng-app="emptyApp">
+    <head>
+        <title></title>
+        <meta name="viewport" content="width=device-width, user-scalable=no">
+        <!-- <link rel="icon" href="img/logo.png" /> -->
+        <!-- CSS -->
+        <link href="fonts/materialicons.css" rel="stylesheet" />
+        <link rel="stylesheet" href="css/materialize.min.css" />
+        
+        <!-- Javascript -->
+        <script type="text/javascript" src="js/jquery/jquery-3.2.1.min.js"></script>
+        <script src="js/materialize/materialize.min.js"></script>
+        <script src="js/angular/angular.min.js"></script>
+    </head>
+    <body>
+        <div class="container">
+
+            <div ng-controller="settings">
+                <div class="row" ng-if="login_status === false && login_clicked === true">
+                    <div class="col" ng-class="{'m4 s1':pwd_confirm === true, 'm5 s1': pwd_confirm !== true}"></div>
+                    <form ng-submit="login()">
+                        <div class="col s4 m1">
+                            <input id="password" type="password" ng-model="$parent.password" value=""/>
+                            <label for="password">Password</label>
+                        </div>
+                        <div class="col s4 m1" ng-if="pwd_confirm === true">
+                                <input id="password_confirmation" type="password" ng-model="$parent.$parent.password_confirmation" value=""/>
+                                <label for="password_confirmation">Password Confirmation</label>
+                            </div>
+                        <div class="input-field col s2 m1">
+                            <button class="btn align-center green"><i class="material-icons">lock</i></button>                                                                    
+                        </div>
+                    </form>
+                    <div class="col m5 s1"></div>
+                </div>
+                <div class="row" style="text-align: center;" ng-if="login_clicked === undefined">
+                    <button class="btn align-center black" ng-click="loginClick()"><i class="material-icons">lock</i></button> 
+                </div>
+            </div>
+        </div>
+        
+        <script src="js/index.js"></script>
+        <script src="js/controllers/settings.js"></script>
+    </body>
+</html>
